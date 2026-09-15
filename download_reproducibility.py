@@ -9,6 +9,7 @@ import json
 import os
 from pathlib import Path, PurePosixPath
 import re
+import shutil
 import stat
 import sys
 import urllib.request
@@ -112,19 +113,30 @@ def assemble(spec, directory):
     return target
 
 
-def extract(archive, directory, top_directory):
+def extract(archive, directory, top_directory, archive_root=None):
+    archive_root = archive_root or top_directory
+    safe_name(top_directory)
+    safe_name(archive_root)
     with zipfile.ZipFile(archive) as z:
         members = z.infolist()
+        destinations = []
         for info in members:
             path = PurePosixPath(info.filename)
-            if '\\' in info.filename or ':' in info.filename or path.is_absolute() or '..' in path.parts or not path.parts or path.parts[0] != top_directory:
+            if '\\' in info.filename or ':' in info.filename or path.is_absolute() or '..' in path.parts or not path.parts or path.parts[0] != archive_root:
                 raise RuntimeError('Unsafe ZIP path: ' + info.filename)
             if stat.S_ISLNK(info.external_attr >> 16):
                 raise RuntimeError('ZIP symlinks are not supported: ' + info.filename)
-            destination = directory.joinpath(*path.parts).resolve()
+            destination = directory.joinpath(top_directory, *path.parts[1:]).resolve()
             if directory.resolve() not in destination.parents:
                 raise RuntimeError('ZIP path leaves extraction directory: ' + info.filename)
-        z.extractall(directory)
+            destinations.append((info, destination))
+        for info, destination in destinations:
+            if info.is_dir():
+                destination.mkdir(parents=True, exist_ok=True)
+            else:
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                with z.open(info) as source, destination.open('wb') as output:
+                    shutil.copyfileobj(source, output, BLOCK)
     print('Extracted:', archive.name, flush=True)
 
 
@@ -150,11 +162,11 @@ def main():
         if not args.assemble_only and not checked(complete, spec):
             for part in spec['assets']:
                 download(part, args.output_dir, base)
-        archives.append(assemble(spec, args.output_dir))
+        archives.append((assemble(spec, args.output_dir), spec.get('archive_root', manifest['top_directory'])))
     if args.extract:
         extracted.mkdir()
-        for archive in archives:
-            extract(archive, extracted, manifest['top_directory'])
+        for archive, archive_root in archives:
+            extract(archive, extracted, manifest['top_directory'], archive_root)
         print('Reconstruction directory:', extracted / manifest['top_directory'])
     print('All requested archives are verified. No statistical model was fitted.')
 

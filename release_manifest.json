@@ -18,7 +18,8 @@
           "bytes": 155072513,
           "sha256": "1483ce40946f4bcdcbcb09c17f507df9ce3835bdc079dfb2b5b3c240c350630a"
         }
-      ]
+      ],
+      "archive_root": "AoAS_NCI60_numerical_records_20260913"
     },
     {
       "name": "AoAS_additional_numerical_records_20260914.zip",
@@ -42,7 +43,8 @@
           "bytes": 1081428354,
           "sha256": "ae1f9b0030bac52122fdba093a11803ceebecc01a04000e972f05eec73f621a8"
         }
-      ]
+      ],
+      "archive_root": "AoAS_revision_complete_20260914"
     },
     {
       "name": "AoAS_historical_data_and_records_20260914.zip",
@@ -61,21 +63,23 @@
           "bytes": 1188083257,
           "sha256": "891482d30b31576af82e6f422611fb36e1946bb8eddccfa30ed740021316c0df"
         }
-      ]
+      ],
+      "archive_root": "AoAS_revision_complete_20260914"
     },
     {
       "name": "AoAS_code_and_reproducibility_linked_20260915.zip",
-      "bytes": 27831200,
-      "sha256": "412d8b2bc0af11f44be9be4c78da9ab00335cb7c6a09aeb87bbf1e4ee06cf7bc",
+      "bytes": 27831295,
+      "sha256": "84df19d9023b0730ecb2a9df774b0cfb8cc6ec2ded2e3163a96c4652cb427edc",
       "role": "Analysis code, software specifications, protocols, summaries, and reconstruction instructions",
       "extraction_order": 4,
       "assets": [
         {
           "name": "AoAS_code_and_reproducibility_linked_20260915.zip",
-          "bytes": 27831200,
-          "sha256": "412d8b2bc0af11f44be9be4c78da9ab00335cb7c6a09aeb87bbf1e4ee06cf7bc"
+          "bytes": 27831295,
+          "sha256": "84df19d9023b0730ecb2a9df774b0cfb8cc6ec2ded2e3163a96c4652cb427edc"
         }
-      ]
+      ],
+      "archive_root": "AoAS_revision_complete_20260914"
     }
   ]
 }
