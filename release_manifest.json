@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "version": "aoas-resubmission-2026-09-15",
+  "repository": "ishspsy/SQS-AoAS",
+  "release_url": "https://github.com/ishspsy/SQS-AoAS/releases/tag/aoas-resubmission-2026-09-15",
+  "download_base_url": "https://github.com/ishspsy/SQS-AoAS/releases/download/aoas-resubmission-2026-09-15",
+  "top_directory": "AoAS_revision_complete_20260914",
+  "archives": [
+    {
+      "name": "AoAS_NCI60_numerical_records_20260913.zip",
+      "bytes": 155072513,
+      "sha256": "1483ce40946f4bcdcbcb09c17f507df9ce3835bdc079dfb2b5b3c240c350630a",
+      "role": "NCI-60 source data and primary fitting records",
+      "extraction_order": 1,
+      "assets": [
+        {
+          "name": "AoAS_NCI60_numerical_records_20260913.zip",
+          "bytes": 155072513,
+          "sha256": "1483ce40946f4bcdcbcb09c17f507df9ce3835bdc079dfb2b5b3c240c350630a"
+        }
+      ]
+    },
+    {
+      "name": "AoAS_additional_numerical_records_20260914.zip",
+      "bytes": 4881428354,
+      "sha256": "d57a5f3dc3fa9f1f766c7c263a62de83064085f775d49b967762eeb88f6359d7",
+      "role": "Additional inference, structural, and NCI-60 records",
+      "extraction_order": 2,
+      "assets": [
+        {
+          "name": "AoAS_additional_numerical_records_20260914.zip.part01",
+          "bytes": 1900000000,
+          "sha256": "6199fbf0fa5ae48b98f32ffb081d427aa468cb25b89298e17cc91cf22af6dc81"
+        },
+        {
+          "name": "AoAS_additional_numerical_records_20260914.zip.part02",
+          "bytes": 1900000000,
+          "sha256": "309d65b0a5a7431734575d7e72c5e330b7e7593fb02cb23f4b45eaf1ba330239"
+        },
+        {
+          "name": "AoAS_additional_numerical_records_20260914.zip.part03",
+          "bytes": 1081428354,
+          "sha256": "ae1f9b0030bac52122fdba093a11803ceebecc01a04000e972f05eec73f621a8"
+        }
+      ]
+    },
+    {
+      "name": "AoAS_historical_data_and_records_20260914.zip",
+      "bytes": 3088083257,
+      "sha256": "c65918206eec03dbfb8c45f7a1e7d5e906f1c44454649df5fc37ccd1b25e769e",
+      "role": "Historical public data, simulations, and application records",
+      "extraction_order": 3,
+      "assets": [
+        {
+          "name": "AoAS_historical_data_and_records_20260914.zip.part01",
+          "bytes": 1900000000,
+          "sha256": "a1a524576ba633c6febb9ba8673699bc4e1099364b511d2d05220069bd9280f0"
+        },
+        {
+          "name": "AoAS_historical_data_and_records_20260914.zip.part02",
+          "bytes": 1188083257,
+          "sha256": "891482d30b31576af82e6f422611fb36e1946bb8eddccfa30ed740021316c0df"
+        }
+      ]
+    },
+    {
+      "name": "AoAS_code_and_reproducibility_linked_20260915.zip",
+      "bytes": 27831200,
+      "sha256": "412d8b2bc0af11f44be9be4c78da9ab00335cb7c6a09aeb87bbf1e4ee06cf7bc",
+      "role": "Analysis code, software specifications, protocols, summaries, and reconstruction instructions",
+      "extraction_order": 4,
+      "assets": [
+        {
+          "name": "AoAS_code_and_reproducibility_linked_20260915.zip",
+          "bytes": 27831200,
+          "sha256": "412d8b2bc0af11f44be9be4c78da9ab00335cb7c6a09aeb87bbf1e4ee06cf7bc"
+        }
+      ]
+    }
+  ]
+}
